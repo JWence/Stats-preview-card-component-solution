@@ -26,13 +26,13 @@ body{
     font-size: 1.5rem;
     background-color: var(--very-dark-blue);
     min-height: 100vh;
-}
-.container{
-    max-width: 1020px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+.container{
+    max-width: 1020px;
 }
 .card{
     color: var(--white);
@@ -48,7 +48,7 @@ body{
     .card{
         max-width: 120rem;
         grid-template-columns: 1fr 1fr;
-        margin-top: 10rem;
+        /*margin-top: 10rem;*/
     }
 }
 .card__info{
@@ -98,10 +98,12 @@ div .info__stats--nums{
 }
 .card__image{
     grid-row: 1/2;
+    position: relative;
+}
+.card__image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: relative;
 }
 
 .card__image::after{
@@ -112,7 +114,8 @@ div .info__stats--nums{
     left: 0;
     top: 0;
     background-color: var(--soft-violet);
-    opacity: .4;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
 }
 
 @media (min-width: 768px) {
